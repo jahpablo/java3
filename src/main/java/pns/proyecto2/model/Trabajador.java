@@ -23,29 +23,33 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "trabajador")
+
 public class Trabajador implements Serializable {
     private static final long serialVersionUID = 1L;
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id_trabajador")
     private Integer idTrabajador;
+    
     @Column(name = "nombre")
     private String nombre;
+    
     @Column(name = "paterno")
     private String paterno;
+    
     @Column(name = "materno")
     private String materno;
-
-    public Trabajador() {
-    }
 
     public Trabajador(String nombre, String paterno, String materno) {
         this.nombre = nombre;
         this.paterno = paterno;
         this.materno = materno;
     }
-    
+
+    public Trabajador() {
+    }
 
     public Trabajador(Integer idTrabajador) {
         this.idTrabajador = idTrabajador;
