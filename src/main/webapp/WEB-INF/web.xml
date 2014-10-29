@@ -5,9 +5,17 @@
         <servlet-name>ServletBuscarHoroscopo</servlet-name>
         <servlet-class>pns.proyecto1.controller.ServletBuscarHoroscopo</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletActualizarTrabajador</servlet-name>
+        <servlet-class>pns.proyecto1.controller.ServletActualizarTrabajador</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletBuscarHoroscopo</servlet-name>
         <url-pattern>/horoscopo.php</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletActualizarTrabajador</servlet-name>
+        <url-pattern>/actualizar-trabajador</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

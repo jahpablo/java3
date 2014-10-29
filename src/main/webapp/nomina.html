@@ -10,13 +10,34 @@
         <link rel="stylesheet" href="js/libs/twitter-bootstrap/css/bootstrap.css">
         <script src="js/libs/twitter-bootstrap/js/bootstrap.js"></script>
         <link rel="stylesheet" href="mi-estilo.css">
+        <script type="text/javascript">
+            $(document).ready(function (){
+               $("#actualizar-trabajador").click(function (){
+                   $.ajax({
+                       url: "actualizar-trabajador",
+                       method:'put',
+                       data:{
+                           id:'1',
+                           nombre:'Raton',
+                           paterno:'Vaquero',
+                           materno:'Malo',
+                       },
+                       success: function (respuesta) {
+                        $("#resultado-actualizacion").html(respuesta);
+                    }                     
+                   });
+               }); 
+            });
+        </script>
     </head>
     <body>
-        <h1>Proyecto Nominas</h1>
+        <a id="actualizar-trabajador" class="btn btn-warning">Actualizar trabajador</a>
+        <div id="resultado-actualizacion"></div>
+     <!--  <h1>Proyecto Nominas</h1>
         <p>Oprime el siguiente boton para ver la nomina</p>
         <a href="#" class="btn mi-color">Ver nomina</a>
         <a href="#" class="btn btn-danger">Ver nomina</a>
         
-        <div id="resultado"></div>
+        <div id="resultado"></div>-->
     </body>
 </html>

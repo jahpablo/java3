@@ -17,7 +17,7 @@ public class TestTodo {
         //Empezar una transaccion
             Transaction tranza = sesion.beginTransaction();
         //Haremos un insert 
-            Trabajador t = new Trabajador("pablo","nieto","Suarez del Real");
+            Trabajador t = new Trabajador("Pablo","Nieto","Suarez del Real");
                 sesion.save(t);
         //liberamos la transaccion
                 tranza.commit();
