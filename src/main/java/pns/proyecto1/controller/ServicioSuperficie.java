@@ -11,6 +11,8 @@ public class ServicioSuperficie {
     }
     
     public String ServicioArea(){
-        return superficie.calcularArea();
+        Cuadrado d = new Cuadrado();
+        d.setLado(6);
+        return d.calcularArea();
     }
 }
