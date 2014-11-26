@@ -6,11 +6,24 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import pns.proyecto2.model.DAOUsuarioImpl;
 
 @Controller
 @RequestMapping("/")
 public class ControladorHola {
-   
+    
+    @RequestMapping(value = "/hola", method = RequestMethod.GET, headers = {"Accept=application/json"})
+        public @ResponseBody String hola(){
+            
+            return "hola desde mi primer controler malo rtyhdfth";
+        }
+         @RequestMapping(value = "/user", method = RequestMethod.GET, headers = {"Accept=application/json"})
+        public @ResponseBody String usuarios()throws Exception{
+             DAOUsuarioImpl da = new DAOUsuarioImpl();
+             
+            return da.obtenerTodos();
+        }
+   /* esto es una opcion
     //primero hacemos el get
     @RequestMapping(value="/hola", method=RequestMethod.GET, headers={"Accept=text/html"})
     public @ResponseBody String holaConGet(){
@@ -24,5 +37,5 @@ public class ControladorHola {
     //vamos a usar la implementacion de json para java de fasterxml o codehouse
         ObjectMapper mapper = new ObjectMapper();
         return mapper.writeValueAsString(GenerarUsuarios.obtenerUsuario());
-    }
+    }*/
 }

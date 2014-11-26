@@ -1,8 +1,16 @@
 package pns.proyecto1.controller;
 
 import java.util.ArrayList;
+import pns.proyecto2.model.DAOUsuarioImpl;
 
 public class GenerarUsuarios {
+    public static String obtenerUsuario() throws Exception{
+        DAOUsuarioImpl du = new DAOUsuarioImpl();
+        
+        return  du.obtenerTodos();
+    }
+    /*esto es una opcion
+    
     public static ArrayList<Usuario> obtenerUsuario(){
         ArrayList<Usuario> usuarios=new ArrayList<Usuario>();
         
@@ -19,7 +27,7 @@ public class GenerarUsuarios {
         usuarios.add(u2);
         usuarios.add(u3);
         
-        return usuarios;
+        return usuarios;*/
     
     }
-}
+

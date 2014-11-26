@@ -1,6 +1,8 @@
 package pns.proyecto2.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Map;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -14,13 +16,14 @@ public class DAOUsuarioImpl {
         Transaction tranza = sesion.beginTransaction();
         
         Criteria cri = sesion.createCriteria(Usuarios.class);
-        ArrayList<Usuarios> usuarios = (ArrayList<Usuarios>)cri.list();
         
+        ArrayList<Usuarios> usuarios = (ArrayList<Usuarios>)cri.list();
+        Map<String, ArrayList<Usuarios>> singletonMap = Collections.singletonMap("usuarios", usuarios);
         ObjectMapper mapper = new ObjectMapper();
         
         tranza.commit();
         sesion.close();
         
-        return mapper.writeValueAsString(usuarios);
+        return mapper.writeValueAsString(singletonMap);
     }
 }
