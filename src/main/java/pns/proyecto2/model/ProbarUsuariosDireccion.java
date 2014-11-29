@@ -9,7 +9,7 @@ public class ProbarUsuariosDireccion {
     public static void main(String[] args)throws Exception{
        DAOUsuarioImpl du = new DAOUsuarioImpl();
         System.out.println(du.obtenerTodos()); 
-       /*SessionFactory factory = HibernateUtilidades.getSessionFactory();
+       SessionFactory factory = HibernateUtilidades.getSessionFactory();
         Session sesion = factory.openSession();
          Transaction tranza = sesion.beginTransaction();
             
@@ -33,7 +33,7 @@ public class ProbarUsuariosDireccion {
             
             tranza.commit();
             sesion.close();
-            System.out.println("todo se guardo bien");*/
+            System.out.println("todo se guardo bien");
     }
     
 }
