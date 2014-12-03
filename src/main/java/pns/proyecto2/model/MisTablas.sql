@@ -1,5 +1,5 @@
 --create table trabajador(id_trabajador integer primary key auto_increment,
---                        nombre varchar(120), paterno varchar(120), materno varchar(120));
+--                       nombre varchar(120), paterno varchar(120), materno varchar(120));
 
 create table usuarios(id_usuario integer primary key auto_increment, nombre varchar(250), edad integer, sueldo float);
 
